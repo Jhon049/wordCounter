@@ -8,6 +8,6 @@ Feature:
   So
 
   Scenario:
-    Given
+    Given An User puts a new random text in the box
     When
     Then
