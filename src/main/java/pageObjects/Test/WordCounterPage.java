@@ -6,10 +6,10 @@ import org.testng.asserts.SoftAssert;
 import managers.ReaderManager;
 import org.openqa.selenium.*;
 
-public class wordCounterPage {
+public class WordCounterPage {
     private WebDriver driver;
     SoftAssert softAssert = new SoftAssert();
-    public wordCounterPage(WebDriver driver){
+    public WordCounterPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
