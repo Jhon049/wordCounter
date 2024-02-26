@@ -2,6 +2,8 @@ package stepDefinitions;
 
 import contextManager.TestContext;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import pageObjects.Test.WordCounterPage;
 
 public class WordCounterSteps {
@@ -24,6 +26,15 @@ public class WordCounterSteps {
             this.wordCounterPage = testContext.getPageManager().getWordCounterPage();
         }
         wordCounterPage.goToURL();
-        wait(5000);
+        wordCounterPage.validateThatISInWordCounterPage();
+        wordCounterPage.putTextInBox();
+    }
+    @When("The User can check how many words and characters it contains")
+    public void The_User_can_check_how_many_words_and_characters_it_contains(){
+        wordCounterPage.countWordsFromBox();
+    }
+    @Then("The user compares the information and validates that the count is right")
+    public void The_user_compares_the_information_and_validates_that_the_count_is_right(){
+        wordCounterPage.validateCounter();
     }
 }
